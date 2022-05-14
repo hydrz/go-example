@@ -10,4 +10,7 @@ func main() {
 	c <- 2
 	fmt.Println(<-c)
 	fmt.Println(<-c)
+
+	c <- 3
+	fmt.Println(<-c)
 }
