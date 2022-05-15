@@ -17,4 +17,13 @@ var (
 
 func main() {
 	fmt.Println(v1, p, v2, v3)
+
+	p = &v1
+	p.X = 1e9
+	fmt.Println(v1) // output {1000000000 2}
+
+	v4 := v2
+	v4.X = 1e9
+	fmt.Println(v2) // output {1 0}
+
 }

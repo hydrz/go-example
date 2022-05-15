@@ -2,11 +2,16 @@
 
 package main
 
-import "github.com/hydrz/go-example/methods/internal/reader"
+import "github.com/hydrz/go-example/tour/methods/internal/reader"
 
 type MyReader struct{}
 
-// TODO: Add a Read([]byte) (int, error) method to MyReader.
+func (r MyReader) Read(p []byte) (n int, err error) {
+	for i := range p {
+		p[i] = 'A'
+	}
+	return len(p), nil
+}
 
 func main() {
 	reader.Validate(MyReader{})

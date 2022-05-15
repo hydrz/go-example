@@ -2,10 +2,18 @@
 
 package main
 
-import "github.com/hydrz/go-example/moretypes/internal/wc"
+import (
+	"strings"
+
+	"github.com/hydrz/go-example/tour/moretypes/internal/wc"
+)
 
 func WordCount(s string) map[string]int {
-	return map[string]int{"x": 1}
+	m := make(map[string]int)
+	for _, v := range strings.Fields(s) {
+		m[v]++
+	}
+	return m
 }
 
 func main() {
